@@ -1,0 +1,46 @@
+<div class="login-container">
+  <div class="container">
+    <div class="login-title">
+      <div class="avatar-image">
+        <i class="fas fa-users"></i>
+      </div>
+    </div>
+    <div class="login-form">
+      <form>
+        <div class="form-group">
+          <label for="inputEmail">Email address</label>
+          <input id="inputEmail" type="email" class="form-control"
+            placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword">Password</label>
+          <input id="inputPassword" type="password" class="form-control"
+            placeholder="Enter Password">
+        </div>
+        <div *ngIf="operation == 'signup'" class="form-group">
+            <label for="inputNickname">Nickname</label>
+            <input id="inputNickname" type="text" class="form-control"
+              placeholder="Enter Nickname">
+          </div>
+        <div *ngIf="operation == 'signin'" class="form-group">
+          <p>Need to create an account?
+            <a (click)="operation = 'signup'">Sign up</a>
+          </p>
+        </div>
+        <div *ngIf="operation == 'signup'" class="form-group">
+          <p>Do you have an account?
+            <a (click)="operation = 'signin'">Sign in</a>
+          </p>
+        </div>
+        <button *ngIf="operation == 'signup'" type="submit"
+          class="btn btn-login">
+          Sign up
+        </button>
+        <button *ngIf="operation == 'signin'" type="submit"
+          class="btn btn-login">
+          Sign in
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
