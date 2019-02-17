@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.btn-orange {
+  background-color: #facf5a;
+  color: #fff;
+  width: 100%;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.btn-red {
+  background-color: #ff5959;
+  color: #fff;
+}

@@ -1,0 +1,17 @@
+.profile-container {
+  margin-top: 60px;
+
+  .profile-photo {
+    text-align: center;
+    padding-top: 40px;
+
+    i {
+      color: #4f9da6;
+      font-size: 64px;
+    }
+
+    &-info {
+      padding-top: 20px;
+    }
+  }
+}
