@@ -1,6 +1,4 @@
 .profile-container {
-  margin-top: 60px;
-
   .profile-photo {
     text-align: center;
     padding-top: 40px;
@@ -13,5 +11,10 @@
     &-info {
       padding-top: 20px;
     }
+  }
+
+  .profile-form {
+    margin: 0 auto;
+    max-width: 600px;
   }
 }
