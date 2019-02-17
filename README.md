@@ -1,6 +1,6 @@
 # Tzingger
 
-Tzingger is system that allows comunicate with other people using
+Tzingger is system that allows comunicate with other people.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
 
