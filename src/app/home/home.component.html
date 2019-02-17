@@ -1,11 +1,35 @@
-<div>
-  <input type="text" placeholder="Find a friend" [(ngModel)]="query">
-  <b>Friends</b>
-  <ng-container *ngFor="let user of friends | search; let i = index">
-    <div *ngIf="user.friend">
-      <a routerLink="/conversation/{{user.uid}}">
-        {{ i }} . {{ user.nick }} - {{ user.age }}
-      </a>
+<div class="home-container">
+  <div class="container">
+    <div class="home-status">
+      <i class="fas fa-user"></i>
+      <div class="home-status-info">
+        <p>
+          <b>Maximino</b>
+        </p>
+        <p>Online</p>
+        <p>( Write a personal message )</p>
+      </div>
     </div>
-  </ng-container>
+    <div class="home-search">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" [(ngModel)]="query"
+          placeholder="Search a contact">
+        <div class="input-group-append">
+          <button class="btn btn-outline-success" type="button" id="button-addon2">
+            <i class="fas fa-user-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="home-contacts">
+      <p><b>Contacts ({{ friends.length }} / {{ friends.length }})</b></p>
+      <ng-container *ngFor="let user of friends | search: query; let i = index">
+        <div *ngIf="user.friend">
+          <div class="item-contact" routerLink="/conversation/{{user.uid}}">
+            <i class="fas fa-user-alt"></i><b>{{ user.nick }}</b> {{ user.subnick || 'No subnick' }} - {{ user.email }}
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
 </div>

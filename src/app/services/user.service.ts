@@ -10,28 +10,31 @@ export class UserService {
   constructor() {
     let myUser1: User  = {
       nick: 'Maximino',
-      subnick: 'mx',
+      subnick: 'adronimo',
       age: 31,
-      email: 'maximino@gmail.com',
+      email: 'adronimo@gmail.com',
       friend: true,
+      status: 'online',
       uid: 1
     };
 
     let myUser2: User  = {
-      nick: 'Nyha',
-      subnick: 'huston',
+      nick: 'Jasmine',
+      subnick: 'jasmina',
       age: 31,
-      email: 'nyha.huston@gmail.com',
+      email: 'jasmine@gmail.com',
       friend: true,
+      status: 'online',
       uid: 2
     };
 
     let myUser3: User  = {
-      nick: 'Swati',
-      subnick: 'swat',
+      nick: 'Marcela',
+      subnick: 'marce',
       age: 31,
-      email: 'swati.swat@gmail.com',
-      friend: false,
+      email: 'marcela@gmail.com',
+      friend: true,
+      status: 'online',
       uid: 3
     };
 
@@ -39,17 +42,19 @@ export class UserService {
       nick: 'Andrea',
       subnick: 'andy',
       age: 31,
-      email: 'andrea.andy@gmai.com',
-      friend: false,
+      email: 'andrea.andy@gmail.com',
+      friend: true,
+      status: 'online',
       uid: 4
     };
 
     let myUser5: User  = {
       nick: 'Karla',
-      subnick: 'kar',
+      subnick: 'karli',
       age: 31,
-      email: 'karla.kar@gmai.com',
-      friend: false,
+      email: 'karla.karli@gmail.com',
+      friend: true,
+      status: 'online',
       uid: 4
     };
     this.friends = [myUser1, myUser2, myUser3, myUser4, myUser5];
