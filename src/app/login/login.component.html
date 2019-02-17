@@ -9,12 +9,12 @@
       <form>
         <div class="form-group">
           <label for="inputEmail">Email address</label>
-          <input id="inputEmail" type="email" class="form-control"
+          <input id="inputEmail" type="email" name="email" [(ngModel)]="email" class="form-control"
             placeholder="Enter email">
         </div>
         <div class="form-group">
           <label for="inputPassword">Password</label>
-          <input id="inputPassword" type="password" class="form-control"
+          <input id="inputPassword" type="password" name="password" [(ngModel)]="password" class="form-control"
             placeholder="Enter Password">
         </div>
         <div *ngIf="operation == 'signup'" class="form-group">
@@ -33,11 +33,11 @@
           </p>
         </div>
         <button *ngIf="operation == 'signup'" type="submit"
-          class="btn btn-orange">
+          (click)="register()" class="btn btn-orange">
           Sign up
         </button>
         <button *ngIf="operation == 'signin'" type="submit"
-          class="btn btn-orange">
+          (click)="login()" class="btn btn-orange">
           Sign in
         </button>
       </form>
