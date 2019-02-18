@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
       .then((data) => {
         alert('Logged with facebook correctly!');
         console.log(data);
+        this.router.navigate(['home']);
       }).catch((error) => {
         alert('Error ocurred!');
         console.log(error);

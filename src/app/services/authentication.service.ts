@@ -21,7 +21,6 @@ export class AuthenticationService {
 
   loginWithFacebook() {
     let provider = new firebase.auth.FacebookAuthProvider();
-
     return this.angularFireAuth.auth.signInWithPopup(provider);
   }
 

@@ -11,7 +11,9 @@ export class HomeComponent implements OnInit {
   friends: User[];
   query: string = '';
 
-  constructor(private userService: UserService) {
+  constructor(
+    private userService: UserService
+  ) {
     this.userService.getUsers().valueChanges()
       .subscribe(
         (data: User[]) => {
@@ -23,5 +25,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
