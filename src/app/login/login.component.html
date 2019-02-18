@@ -19,7 +19,7 @@
         </div>
         <div *ngIf="operation == 'signup'" class="form-group">
             <label for="inputNickname">Nickname</label>
-            <input id="inputNickname" type="text" class="form-control"
+            <input id="inputNickname" type="text" name="nickname" [(ngModel)]="nickname" class="form-control"
               placeholder="Enter Nickname">
           </div>
         <div *ngIf="operation == 'signin'" class="form-group">
@@ -39,6 +39,11 @@
         <button *ngIf="operation == 'signin'" type="submit"
           (click)="login()" class="btn btn-orange">
           Sign in
+        </button>
+        <div class="separator-buttons"></div>
+        <button *ngIf="operation == 'signin'" type="submit"
+          (click)="loginWithFacebook()" class="btn btn-facebook">
+          <i class="fab fa-facebook-f"></i> Sign in with facebook
         </button>
       </form>
     </div>

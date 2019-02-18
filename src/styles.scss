@@ -10,7 +10,23 @@
   }
 }
 
-.btn-red {
-  background-color: #ff5959;
+.btn-facebook {
+  background-color: #3b5998;
   color: #fff;
+  width: 100%;
+
+  i {
+    color: #fff !important;
+    font-size: 22px !important;
+    padding-right: 6px;
+  }
+
+  &:hover {
+    color: #fff;
+    opacity: 0.8;
+  }
+}
+
+.separator-buttons {
+  padding: 10px;
 }

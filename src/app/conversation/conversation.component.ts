@@ -10,10 +10,7 @@ import { UserService } from '../services/user.service';
 })
 export class ConversationComponent implements OnInit {
   friendId: any;
-  friends: User[];
   friend: User;
-  price: number = 78.2331;
-  today: any = Date.now();
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -21,11 +18,14 @@ export class ConversationComponent implements OnInit {
   ) {
     this.friendId = this.activatedRoute.snapshot.params['uid'];
     console.log(this.friendId);
-    this.friends = this.userService.getFriends();
-    this.friend = this.friends.find((record) => {
-      return record.uid == this.friendId;
-    });
-    console.log('Here is the value...', this.friend);
+    this.userService.getUserById(this.friendId).valueChanges()
+      .subscribe(
+        (data: User)=>{
+          this.friend = data;
+        },
+        (error) => {
+          console.log(error);
+        })
   }
 
   ngOnInit() {

@@ -22,11 +22,11 @@
       </div>
     </div>
     <div class="home-contacts">
-      <p><b>Contacts ({{ friends.length }} / {{ friends.length }})</b></p>
+      <p *ngIf="friends"><b>Contacts ({{ friends.length }} / {{ friends.length }})</b></p>
       <ng-container *ngFor="let user of friends | search: query; let i = index">
-        <div *ngIf="user.friend">
+        <div *ngIf="!user.friend">
           <div class="item-contact" routerLink="/conversation/{{user.uid}}">
-            <i class="fas fa-user-alt"></i><b>{{ user.nick }}</b> {{ user.subnick || 'No subnick' }} - {{ user.email }}
+            <i class="fas fa-user-alt"></i><b>{{ user.nickname }}</b> {{ user.subnick || 'No subnick' }} - {{ user.email }}
           </div>
         </div>
       </ng-container>

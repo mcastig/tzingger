@@ -1,26 +1,35 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor(private angularFirteAuth: AngularFireAuth) { }
+  constructor(
+    private angularFireAuth: AngularFireAuth
+  ) { }
 
   loginWithEmail(email: string, password: string) {
-    return this.angularFirteAuth.auth.signInWithEmailAndPassword(email, password);
+    return this.angularFireAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
   registerWithEmail(email: string, password: string) {
-    return this.angularFirteAuth.auth.createUserWithEmailAndPassword(email, password);
+    return this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password);
+  }
+
+  loginWithFacebook() {
+    let provider = new firebase.auth.FacebookAuthProvider();
+
+    return this.angularFireAuth.auth.signInWithPopup(provider);
   }
 
   getStatus() {
-    return this.angularFirteAuth.authState;
+    return this.angularFireAuth.authState;
   }
 
   logOut() {
-    return this.angularFirteAuth.auth.signOut();
+    return this.angularFireAuth.auth.signOut();
   }
 }
