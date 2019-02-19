@@ -2,11 +2,11 @@
   <div class="container">
     <div class="home-status">
       <i class="fas fa-user"></i>
-      <div class="home-status-info">
+      <div class="home-status-info" *ngIf="user">
         <p>
-          <b>Maximino</b>
+          <b>{{ user.nickname }}</b>
         </p>
-        <p>Online</p>
+        <p>{{ user.status }}</p>
         <p>( Write a personal message )</p>
       </div>
     </div>
