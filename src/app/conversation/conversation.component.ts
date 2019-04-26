@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../interfaces/user';
 import { UserService } from '../services/user.service';
@@ -10,7 +10,7 @@ import { AuthenticationService } from '../services/authentication.service';
   templateUrl: './conversation.component.html',
   styleUrls: ['./conversation.component.scss']
 })
-export class ConversationComponent implements OnInit {
+export class ConversationComponent {
   friendId: any;
   friend: User;
   user: User;
@@ -46,9 +46,6 @@ export class ConversationComponent implements OnInit {
               });
           });
       })
-  }
-
-  ngOnInit() {
   }
 
   sendMessage() {

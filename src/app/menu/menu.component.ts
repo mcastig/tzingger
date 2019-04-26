@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 
@@ -7,15 +7,12 @@ import { Router } from '@angular/router';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent {
 
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router
   ) { }
-
-  ngOnInit() {
-  }
 
   logOut() {
     this.authenticationService.logOut().then(
@@ -28,5 +25,4 @@ export class MenuComponent implements OnInit {
       }
     );
   }
-
 }

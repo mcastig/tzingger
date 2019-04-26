@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { User } from '../interfaces/user';
 import { UserService } from '../services/user.service';
 import { AuthenticationService } from '../services/authentication.service';
@@ -8,7 +8,7 @@ import { AuthenticationService } from '../services/authentication.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
   user: User;
 
   constructor(
@@ -32,9 +32,6 @@ export class ProfileComponent implements OnInit {
       )
   }
 
-  ngOnInit() {
-  }
-
   saveSettings() {
     this.userService.editUser(this.user).then(
       () => {
@@ -43,5 +40,4 @@ export class ProfileComponent implements OnInit {
         console.log('Error ocurred');
       })
   }
-
 }
